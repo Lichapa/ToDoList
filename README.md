@@ -25,21 +25,6 @@
 > Visit my [repository](https://github.com/Lichapa/ToDoList.git)
 > Clone the repository in your code editor using the URL above.
 > Change directory into the repository and make your desried changes.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
 ## Author
 
 @Lichapa: Mphatso Lichapa

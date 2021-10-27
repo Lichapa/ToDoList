@@ -1,3 +1,60 @@
 body {
-  background-color: bisque;
+  background-color: white;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  width: 40%;
+  margin: 10% auto;
+  background-color: aliceblue;
+  padding: 3px;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 400px;
+  padding: 10px 5px;
+  margin: 1px 5px;
+  background-color: #fff;
+}
+
+.addbox{
+  width: 96%;  
+}
+
+#addlist {
+  font-size: 16px;
+  font-weight: 200;
+  font-style: italic;
+  width: 100%;
+  padding: 10px 5px;
+  margin: 1px 5px; 
+  background-color: #fff;  
+  border: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+
+}
+
+.task {
+  font-size: 18px;
+  font-weight: 400px;
+  padding: 10px 5px;
+  margin: 2px 5px;
+  background-color: #fff;
+}
+
+.btn-clear {
+  padding: 10px 5px;
+  margin: 2px 5px; 
+  background-color:aliceblue;
+  border: none;
 }
