@@ -1,32 +1,27 @@
-import _ from 'lodash';
 import './style.css';
 
-(function() {
-  let toDoList = document.querySelector(".toDoList");
+(function () {
+  const toDoList = document.querySelector('.toDoList');
 
   const toDoObjects = [
     {
-      task: "Clean the house", 
+      task: 'Clean the house',
       complete: true,
     },
     {
-      task: "sleep",
+      task: 'sleep',
       complete: true,
     },
     {
-      task: "Study",
+      task: 'Study',
       complete: true,
     },
   ];
-  
-  let toDoListItems = '';
 
-  for (let toDo of toDoObjects) {
-    toDoListItems += "<li class='task'>" +
-    "<input type='checkbox'>" + " " + toDo.task + "</li>";
+  let toDoListItems = '';
+  for (const toDo of toDoObjects) {
+    toDoListItems += `<li class='task'> <input type='checkbox'> ${toDo.task} </li>`;
   }
 
   toDoList.innerHTML = toDoListItems;
-  
-}) ();
-
+}());
