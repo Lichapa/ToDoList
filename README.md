@@ -2,7 +2,7 @@
 
 > The aim of the project is to create a to do list and use webpack to bundle Javascript.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./screenshot.PNG)
 
 ## Project objectives.
 - Use webpack to bundle JavaScript.
