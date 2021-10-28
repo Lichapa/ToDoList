@@ -1,6 +1,5 @@
 body {
   background-color: white;
-
 }
 
 .container {
@@ -15,14 +14,14 @@ body {
 
 h1 {
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
   padding: 10px 5px;
   margin: 1px 5px;
   background-color: #fff;
 }
 
-.addbox{
-  width: 96%;  
+.addbox {
+  width: 96%;
 }
 
 #addlist {
@@ -31,8 +30,8 @@ h1 {
   font-style: italic;
   width: 100%;
   padding: 10px 5px;
-  margin: 1px 5px; 
-  background-color: #fff;  
+  margin: 1px 5px;
+  background-color: #fff;
   border: 0;
 }
 
@@ -41,12 +40,11 @@ ul {
   margin: 0;
   list-style-type: none;
   width: 100%;
-
 }
 
 .task {
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
   padding: 10px 5px;
   margin: 2px 5px;
   background-color: #fff;
@@ -54,7 +52,7 @@ ul {
 
 .btn-clear {
   padding: 10px 5px;
-  margin: 2px 5px; 
-  background-color:aliceblue;
+  margin: 2px 5px;
+  background-color: aliceblue;
   border: none;
 }

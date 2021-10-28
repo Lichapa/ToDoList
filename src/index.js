@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import './style.css';
 
 (function () {
