@@ -12,16 +12,28 @@ body {
   padding: 3px;
 }
 
-h1 {
+.content {
   font-size: 18px;
   font-weight: 400;
-  padding: 10px 5px;
+  padding: 5px 5px;
   margin: 1px 5px;
   background-color: #fff;
 }
 
-.addbox {
-  width: 96%;
+.flex-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.icons {
+  width: 18px;
+  height: 18px;
+  margin: auto 0;
 }
 
 #addlist {
@@ -56,3 +68,8 @@ ul {
   background-color: aliceblue;
   border: none;
 }
+
+.completed {
+  text-decoration: line-through;
+}
+

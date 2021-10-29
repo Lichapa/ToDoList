@@ -1,5 +1,10 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
+import {completed} from './interactive.js';
+
+const checkBox = document.querySelector('.check-box');
+
+toDoList.addEventListener('click', completed);
 
 (function () {
   const toDoList = document.querySelector('.toDoList');
@@ -21,7 +26,8 @@ import './style.css';
 
   let toDoListItems = '';
   for (const toDo of toDoObjects) {
-    toDoListItems += `<li class='task'> <input type='checkbox'> ${toDo.task} </li>`;
+    toDoListItems += `<li class='task flex-end content'>
+    <div> <input type='checkbox' class='check-box'> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
   }
 
   toDoList.innerHTML = toDoListItems;
