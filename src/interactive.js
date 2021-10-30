@@ -1,3 +1,4 @@
+
 export default function completed(e) {
   const item = e.target;
   let todo;
@@ -10,3 +11,4 @@ export default function completed(e) {
     todo.classList.remove('completed');
   }
 }
+
