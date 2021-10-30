@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ completed)\n/* harmony export */ });\nfunction completed(e) {\n  const item = e.target;\n\n  if (item.checked) {\n    const todo = item.parentElement;\n    todo.classList.add('completed');\n  } else {\n    const todo = item.parentElement;\n    todo.classList.remove('completed');\n  }\n}\n\n//# sourceURL=webpack://todolist/./src/interactive.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ completed)\n/* harmony export */ });\nfunction completed(e) {\n  const item = e.target;\n  let todo;\n\n  if (item.checked) {\n    todo = item.parentElement;\n    todo.classList.add('completed');\n  } else {\n    todo = item.parentElement;\n    todo.classList.remove('completed');\n  }\n}\n\n//# sourceURL=webpack://todolist/./src/interactive.js?");
 
 /***/ })
 
