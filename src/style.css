@@ -71,5 +71,9 @@ ul {
 
 .completed {
   text-decoration: line-through;
+  pointer-events: all;
 }
 
+.check-box {
+  cursor: pointer;
+}

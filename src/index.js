@@ -1,34 +1,50 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
-import {completed} from './interactive.js';
+import completed from './interactive.js';
 
-const checkBox = document.querySelector('.check-box');
+const toDoList = document.querySelector('.toDoList');
 
 toDoList.addEventListener('click', completed);
 
-(function () {
-  const toDoList = document.querySelector('.toDoList');
+function saveTasks(toDo) {
+  let todos;
+  if (localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  todos.push(toDo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
 
+function todo() {
   const toDoObjects = [
     {
       task: 'Clean the house',
-      complete: true,
+      completed: false,
     },
     {
       task: 'sleep',
-      complete: true,
+      completed: true,
     },
     {
       task: 'Study',
-      complete: true,
+      completed: false,
     },
   ];
 
   let toDoListItems = '';
   for (const toDo of toDoObjects) {
-    toDoListItems += `<li class='task flex-end content'>
+    if (toDo.completed === true) {
+      toDoListItems += `<li class='task flex-end content completed'>
+    <div> <input type='checkbox' class='check-box' checked> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+    } else {
+      toDoListItems += `<li class='task flex-end content'>
     <div> <input type='checkbox' class='check-box'> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+    }
+    saveTasks(toDo);
   }
-
   toDoList.innerHTML = toDoListItems;
-}());
+}
+
+document.addEventListener('DOMContentLoaded', todo);

@@ -1,8 +1,11 @@
-export function completed(e) {
+export default function completed(e) {
   const item = e.target;
 
-  if (item.classList[0] === "check-box"){
+  if (item.checked) {
     const todo = item.parentElement;
-    todo.classList.toggle("completed");
+    todo.classList.add('completed');
+  } else {
+    const todo = item.parentElement;
+    todo.classList.remove('completed');
   }
-};
+}
