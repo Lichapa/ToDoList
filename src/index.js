@@ -21,7 +21,9 @@ import './style.css';
 
   let toDoListItems = '';
   for (const toDo of toDoObjects) {
-    toDoListItems += `<li class='task'> <input type='checkbox'> ${toDo.task} </li>`;
+    toDoListItems += `<li class='task flex-end content completed'>
+    <div> <input type='checkbox' class='check-box'> ${toDo.task}</div> 
+    <i class="fas fa-ellipsis-v"></i> </li>`
   }
 
   toDoList.innerHTML = toDoListItems;
