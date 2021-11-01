@@ -8,6 +8,8 @@
 - Use webpack to bundle JavaScript.
 - Practice how to use proper ES6 syntax.
 - Use ES6 modules to write modular JavaScript.
+- Write a function to render dynamically created list of tasks in the dedicated placeholder. 
+- Load CSS using webpack Style/CSS Loader
 
 ## Built With
 
