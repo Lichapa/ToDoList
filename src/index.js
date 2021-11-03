@@ -1,21 +1,10 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
-import completed from './interactive.js';
+import completed, { saveTasks } from './interactive.js';
 
 const toDoList = document.querySelector('.toDoList');
 
 toDoList.addEventListener('change', completed);
-
-function saveTasks(toDo) {
-  let todos;
-  if (localStorage.getItem('todos') === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  todos.push(toDo);
-  localStorage.setItem('todos', JSON.stringify(todos));
-}
 
 function loadTodo() {
   let toDoObjects;
@@ -29,11 +18,11 @@ function loadTodo() {
   let toDoListItems = '';
   for (const toDo of toDoObjects) {
     if (toDo.completed === true) {
-      toDoListItems += `<li class='task flex-end content completed'>
-    <div> <input type='checkbox' class='check-box' checked> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+      toDoListItems += `<li class='task flex-end'>
+    <div class='content completed flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div><i class="fas fa-ellipsis-v"></i>  </li>`;
     } else {
-      toDoListItems += `<li class='task flex-end content'>
-    <div> <input type='checkbox' class='check-box'> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+      toDoListItems += `<li class='task flex-end '>
+    <div class='content flex-end ' id='${toDo.index}'> <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div> <i class="fas fa-ellipsis-v"></i> </li>`;
     }
   }
   toDoList.innerHTML = toDoListItems;
@@ -44,14 +33,17 @@ function todo() {
     {
       task: 'Clean the house',
       completed: false,
+      index: 0,
     },
     {
       task: 'sleep',
-      completed: false,
+      completed: true,
+      index: 1,
     },
     {
       task: 'Study',
       completed: false,
+      index: 2,
     },
   ];
 
@@ -59,11 +51,13 @@ function todo() {
     let toDoListItems = '';
     for (const toDo of toDoObjects) {
       if (toDo.completed === true) {
-        toDoListItems += `<li class='task flex-end content completed'>
-      <div> <input type='checkbox' class='check-box' checked> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+        toDoListItems += `<li class='task flex-end'>
+        <div class='content completed flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box' checked>
+        <p> ${toDo.task}</p></div><i class="fas fa-ellipsis-v"></i></li>`;
       } else {
-        toDoListItems += `<li class='task flex-end content'>
-    <div> <input type='checkbox' class='check-box'> ${toDo.task}</div> <img class="icons" src="../img/threedots.png" alt="Circular arrow"> </li>`;
+        toDoListItems += `<li class='task flex-end '>
+        <div class='content flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box'><p> ${toDo.task} </p>
+        </div><i class="fas fa-ellipsis-v"></i></li>`;
       }
       saveTasks(toDo);
     }

@@ -18,6 +18,9 @@ body {
   padding: 5px 5px;
   margin: 1px 5px;
   background-color: #fff;
+  pointer-events: all;
+
+  
 }
 
 .flex-end {
@@ -71,9 +74,16 @@ ul {
 
 .completed {
   text-decoration: line-through;
-  pointer-events: all;
+}
+
+.not-completed {
+  text-decoration: none;
 }
 
 .check-box {
   cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
