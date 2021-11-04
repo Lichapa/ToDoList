@@ -15,11 +15,6 @@
 - JavaScript
 - webpack
 
-## Live Demo
-
-[Live Demo Link](https://lichapa.github.io/ToDoList/dist/)
-
-
 ## Getting Started
 
 > Visit my [repository](https://github.com/Lichapa/ToDoList.git)
