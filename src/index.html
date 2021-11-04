@@ -10,9 +10,14 @@
 </head>
 <body>
   <div class="container"> 
-    <h1 class="header">Today's To Do</h1>
-    <div class="addbox">
+    <div class="header flex-end content">
+      <h1>Today's To Do</h1>
+      <i class="fas fa-sync-alt"></i>
+    </div>
+    
+    <div class="addbox flex-end content">
       <input type="text" id="addlist" placeholder="add to your list">
+      <span class="enterArrow" id="arrow">&#8629;</span>
     </div>
     <ul class="toDoList" id="toDoList">
     </ul>
