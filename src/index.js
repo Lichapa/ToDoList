@@ -18,8 +18,8 @@ export function loadTodo() {
     let toDoListItems = '';
   for (const toDo of toDoObjects) {
     if (toDo.completed === true) {
-      toDoListItems += `<li class='task flex-end'>
-    <div class='content completed flex-end' id='${toDo.index}'> 
+      toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
+    <div class='content completed flex-end' > 
     <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div>
     <div class='icons'>
     <button class='editBtn iconBtn '>
@@ -30,8 +30,8 @@ export function loadTodo() {
     </button>
     </div></li>`;
     } else {
-      toDoListItems += `<li class='task flex-end '>
-    <div class='content flex-end ' id='${toDo.index}'> 
+      toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
+    <div class='content flex-end ' > 
     <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div>
     <div class='icons'>
     <button class='editBtn iconBtn ' >

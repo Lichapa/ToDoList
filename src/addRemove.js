@@ -25,10 +25,11 @@ export default function addtodoItem(e) {
 
 export function manipulate(e) {
   const item = e.target;
+  
   //Delete todo
   if (item.classList[0] === "trashBtn") {
-    const todo = item.parentElement.parentElement;
-    removeLocalTodos(todo)
+    const todo = item.parentElement;
+    removeLocalTodos(e);
     todo.remove();
   }
 
@@ -44,17 +45,31 @@ export function manipulate(e) {
   }
 }
 
-function removeLocalTodos(todo) {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  const todoIndex = todo.children[0].innerText;
-  todos.splice(todos.indexOf(todoIndex), 1);
-  localStorage.setItem('todos', JSON.stringify(todos));
+function arrangeIndex(toDoObjects) {
+  toDoObjects.forEach((todo, i) => {
+    todo.index = i;
+  });
+  localStorage.setItem('todos', JSON.stringify(toDoObjects));
+}
+
+function removeLocalTodos(e) {
+  const task = e.target;
+  let toDoObjects = getTaskLS();
+  console.log(toDoObjects);
+
+  // let todo;
+  const todoIndex = task.parentElement.parentElement.parentElement.id;
+  console.log(todoIndex);
+  toDoObjects.forEach((element, x) => {
+    if (element.index == todoIndex) {
+      toDoObjects.splice(x, 1);
+      localStorage.setItem('todos', JSON.stringify(toDoObjects));
+    }
+  });
+  arrangeIndex(toDoObjects);
   loadTodo();
 }
+
+
 
 
