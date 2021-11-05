@@ -74,6 +74,7 @@ ul {
   margin: 2px 5px;
   background-color: aliceblue;
   border: none;
+  cursor: pointer;
 }
 
 .completed {

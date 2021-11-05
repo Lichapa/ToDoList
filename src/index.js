@@ -1,21 +1,19 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
-import completed, { getTaskLS } from './interactive.js';
-import addtodoItem, {manipulate} from './addRemove.js';
+import { getTaskLS } from './interactive.js';
+import addtodoItem, { manipulate, clearCompleted } from './addRemove.js';
 
 const toDoList = document.querySelector('.toDoList');
 const toDoBtn = document.querySelector('.btnToDo');
-
-
+const clearBtn = document.querySelector('.btn-clear');
 
 toDoList.addEventListener('click', manipulate);
 toDoBtn.addEventListener('click', addtodoItem);
+clearBtn.addEventListener('click', clearCompleted);
 
-
-
-export function loadTodo() {
-  let toDoObjects = getTaskLS();
-    let toDoListItems = '';
+function loadTodo() {
+  const toDoObjects = getTaskLS();
+  let toDoListItems = '';
   for (const toDo of toDoObjects) {
     if (toDo.completed === true) {
       toDoListItems += `<li class='task flex-end' id='${toDo.index}'>

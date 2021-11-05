@@ -10,7 +10,7 @@ export function getTaskLS() {
 
 export default function completed(e) {
   const task = e.target;
-  let toDoObjects = getTaskLS();
+  const toDoObjects = getTaskLS();
   let todo;
   let newTask;
   if (task.checked === true) {
