@@ -1,28 +1,47 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
-import completed, { saveTasks } from './interactive.js';
+import completed, { getTaskLS } from './interactive.js';
+import addtodoItem, {manipulate} from './addRemove.js';
 
 const toDoList = document.querySelector('.toDoList');
+const toDoBtn = document.querySelector('.btnToDo');
 
-toDoList.addEventListener('change', completed);
 
-function loadTodo() {
-  let toDoObjects;
 
-  if (localStorage.getItem('todos') === null) {
-    toDoObjects = [];
-  } else {
-    toDoObjects = JSON.parse(localStorage.getItem('todos'));
-  }
+toDoList.addEventListener('click', manipulate);
+toDoBtn.addEventListener('click', addtodoItem);
 
-  let toDoListItems = '';
+
+
+export function loadTodo() {
+  let toDoObjects = getTaskLS();
+    let toDoListItems = '';
   for (const toDo of toDoObjects) {
     if (toDo.completed === true) {
       toDoListItems += `<li class='task flex-end'>
-    <div class='content completed flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div><i class="fas fa-ellipsis-v"></i>  </li>`;
+    <div class='content completed flex-end' id='${toDo.index}'> 
+    <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div>
+    <div class='icons'>
+    <button class='editBtn iconBtn '>
+    <i class="editBtn fas fa-pen btn  "></i>
+    </button>
+    <button class='trashBtn iconBtn ' >
+    <i class="trashBtn fas fa-trash btn"></i> 
+    </button>
+    </div></li>`;
     } else {
       toDoListItems += `<li class='task flex-end '>
-    <div class='content flex-end ' id='${toDo.index}'> <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div> <i class="fas fa-ellipsis-v"></i> </li>`;
+    <div class='content flex-end ' id='${toDo.index}'> 
+    <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div>
+    <div class='icons'>
+    <button class='editBtn iconBtn ' >
+    <i class="editBtn fas fa-pen btn"></i>
+    </button>
+    <button class='iconBtn trashBtn' >
+    <i class="trashBtn fas fa-trash btn"></i> 
+    </button>
+    </div>
+    </li>`;
     }
   }
   toDoList.innerHTML = toDoListItems;
