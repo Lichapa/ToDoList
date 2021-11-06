@@ -18,7 +18,7 @@ function loadTodo() {
     if (toDo.completed === true) {
       toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
     <div class='content completed flex-end' > 
-    <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div>
+    <input type='checkbox' class='check-box' checked><p><span class='hide'>${toDo.task}</span></div>
     <div class='icons'>
     <button class='editBtn iconBtn '>
     <i class="editBtn fas fa-pen btn  "></i>
@@ -30,7 +30,7 @@ function loadTodo() {
     } else {
       toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
     <div class='content flex-end ' > 
-    <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div>
+    <input type='checkbox' class='check-box'><p> <span class='hide'>${toDo.task}</span></p></div>
     <div class='icons'>
     <button class='editBtn iconBtn ' >
     <i class="editBtn fas fa-pen btn"></i>

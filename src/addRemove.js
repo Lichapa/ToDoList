@@ -32,10 +32,10 @@ function removeLocalTodos(e) {
   const task = e.target;
   const toDoObjects = getTaskLS();
 
-  const todoIndex = task.parentElement.parentElement.parentElement.id;
-  console.log(todoIndex);
+  let todoIndex = task.parentElement.parentElement.parentElement.id;
+  todoIndex = +todoIndex; // Converting to number
   toDoObjects.forEach((element, x) => {
-    if (element.index == todoIndex) {
+    if (element.index === todoIndex) {
       toDoObjects.splice(x, 1);
       localStorage.setItem('todos', JSON.stringify(toDoObjects));
     }
@@ -44,10 +44,50 @@ function removeLocalTodos(e) {
   window.location.reload();
 }
 
+export function clearCompleted(e) {
+  e.preventDefault();
+  let toDoObjects = getTaskLS();
+  toDoObjects = toDoObjects.filter((task) => task.completed === false);
+  localStorage.setItem('todos', JSON.stringify(toDoObjects));
+  arrangeIndex(toDoObjects);
+  window.location.reload();
+}
+
+function saveTask(e) {
+  const newTask = e.target.value;
+  let taskID = e.target.parentElement.parentElement.parentElement.id;
+  taskID = +taskID; // converting to number.
+
+  if (e.key === 'Enter') {
+    const toDoObjects = getTaskLS();
+    toDoObjects.forEach((element) => {
+      if (element.index === taskID) {
+        element.task = newTask;
+      }
+    });
+    localStorage.setItem('todos', JSON.stringify(toDoObjects));
+    window.location.reload();
+  }
+}
+
+export function editTask(e) {
+  let item = e.target;
+  const p = item.parentElement.parentElement.parentElement.children[0].children[1];
+  item = item.parentElement.parentElement.parentElement.children[0].children[1].textContent;
+  item = item.trim('');
+  const itemInput = document.createElement('input');
+  itemInput.type = 'text';
+  itemInput.value = item;
+  itemInput.classList.add('edit');
+  itemInput.addEventListener('keypress', saveTask);
+  itemInput.addEventListener('click', saveTask);
+  p.appendChild(itemInput);
+  p.children[0].remove();
+}
+
 export function manipulate(e) {
   const item = e.target;
 
-  // Delete todo
   if (item.classList[0] === 'trashBtn') {
     const todo = item.parentElement;
     removeLocalTodos(e);
@@ -55,20 +95,10 @@ export function manipulate(e) {
   }
 
   if (item.classList[0] === 'editBtn') {
-    const a = 110;
-    console.log(a);
+    editTask(e);
   }
 
   if (item.classList[0] === 'check-box') {
     completed(e);
   }
-}
-
-export function clearCompleted(e){
-  e.preventDefault();
-  let toDoObjects = getTaskLS();
-  toDoObjects = toDoObjects.filter((task) => task.completed === false);
-  localStorage.setItem('todos', JSON.stringify(toDoObjects));
-  arrangeIndex(toDoObjects);
-  window.location.reload();
 }
