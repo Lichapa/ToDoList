@@ -18,20 +18,19 @@ body {
   padding: 5px 5px;
   margin: 1px 5px;
   background-color: #fff;
-  /* pointer-events: all; */
 }
 
-.icons{
-   margin: auto 0;
- }
+.icons {
+  margin: auto 0;
+}
 
- .iconBtn,
- .btnToDo {
-   border: 0;
-   width: 30px;
-   background-color: white;
-   cursor: pointer;
- }
+.iconBtn,
+.btnToDo {
+  border: 0;
+  width: 30px;
+  background-color: white;
+  cursor: pointer;
+}
 
 .flex-end {
   display: flex;
