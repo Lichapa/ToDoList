@@ -1,4 +1,3 @@
-// import { formatters } from "stylelint";
 import completed, { getTaskLS } from './interactive.js';
 
 export function myList(task, completed = false, index, list) {
