@@ -1,70 +1,48 @@
 /* eslint-disable no-restricted-syntax */
 import './style.css';
-import completed, { saveTasks } from './interactive.js';
+import { getTaskLS } from './interactive.js';
+import addtodoItem, { manipulate, clearCompleted } from './addRemove.js';
 
 const toDoList = document.querySelector('.toDoList');
+const toDoBtn = document.querySelector('.btnToDo');
+const clearBtn = document.querySelector('.btn-clear');
 
-toDoList.addEventListener('change', completed);
+toDoList.addEventListener('click', manipulate);
+toDoBtn.addEventListener('click', addtodoItem);
+clearBtn.addEventListener('click', clearCompleted);
 
 function loadTodo() {
-  let toDoObjects;
-
-  if (localStorage.getItem('todos') === null) {
-    toDoObjects = [];
-  } else {
-    toDoObjects = JSON.parse(localStorage.getItem('todos'));
-  }
-
+  const toDoObjects = getTaskLS();
   let toDoListItems = '';
   for (const toDo of toDoObjects) {
     if (toDo.completed === true) {
-      toDoListItems += `<li class='task flex-end'>
-    <div class='content completed flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box' checked><p> ${toDo.task}</p></div><i class="fas fa-ellipsis-v"></i>  </li>`;
+      toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
+    <div class='content completed flex-end' > 
+    <input type='checkbox' class='check-box' checked><p><span class='hide'>${toDo.task}</span></div>
+    <div class='icons'>
+    <button class='editBtn iconBtn '>
+    <i class="editBtn fas fa-pen btn  "></i>
+    </button>
+    <button class='trashBtn iconBtn ' >
+    <i class="trashBtn fas fa-trash btn"></i> 
+    </button>
+    </div></li>`;
     } else {
-      toDoListItems += `<li class='task flex-end '>
-    <div class='content flex-end ' id='${toDo.index}'> <input type='checkbox' class='check-box'><p> ${toDo.task}</p></div> <i class="fas fa-ellipsis-v"></i> </li>`;
+      toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
+    <div class='content flex-end ' > 
+    <input type='checkbox' class='check-box'><p> <span class='hide'>${toDo.task}</span></p></div>
+    <div class='icons'>
+    <button class='editBtn iconBtn ' >
+    <i class="editBtn fas fa-pen btn"></i>
+    </button>
+    <button class='iconBtn trashBtn' >
+    <i class="trashBtn fas fa-trash btn"></i> 
+    </button>
+    </div>
+    </li>`;
     }
   }
   toDoList.innerHTML = toDoListItems;
 }
 
-function todo() {
-  const toDoObjects = [
-    {
-      task: 'Clean the house',
-      completed: false,
-      index: 0,
-    },
-    {
-      task: 'sleep',
-      completed: true,
-      index: 1,
-    },
-    {
-      task: 'Study',
-      completed: false,
-      index: 2,
-    },
-  ];
-
-  if (localStorage.getItem('todos') === null) {
-    let toDoListItems = '';
-    for (const toDo of toDoObjects) {
-      if (toDo.completed === true) {
-        toDoListItems += `<li class='task flex-end'>
-        <div class='content completed flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box' checked>
-        <p> ${toDo.task}</p></div><i class="fas fa-ellipsis-v"></i></li>`;
-      } else {
-        toDoListItems += `<li class='task flex-end '>
-        <div class='content flex-end' id='${toDo.index}'> <input type='checkbox' class='check-box'><p> ${toDo.task} </p>
-        </div><i class="fas fa-ellipsis-v"></i></li>`;
-      }
-      saveTasks(toDo);
-    }
-    toDoList.innerHTML = toDoListItems;
-  } else {
-    loadTodo();
-  }
-}
-
-document.addEventListener('DOMContentLoaded', todo);
+document.addEventListener('DOMContentLoaded', loadTodo);

@@ -10,7 +10,7 @@ export function getTaskLS() {
 
 export default function completed(e) {
   const task = e.target;
-  const myList = getTaskLS();
+  const toDoObjects = getTaskLS();
   let todo;
   let newTask;
   if (task.checked === true) {
@@ -18,7 +18,7 @@ export default function completed(e) {
     todo.classList.add('completed');
     newTask = todo.children[1].textContent;
     newTask = newTask.trim();
-    myList.forEach((element) => {
+    toDoObjects.forEach((element) => {
       if (element.task === newTask) {
         element.completed = true;
       }
@@ -28,13 +28,14 @@ export default function completed(e) {
     todo.classList.remove('completed');
     newTask = todo.children[1].textContent;
     newTask = newTask.trim();
-    myList.forEach((element) => {
+    toDoObjects.forEach((element) => {
       if (element.task === newTask) {
         element.completed = false;
       }
     });
   }
-  localStorage.setItem('todos', JSON.stringify(myList));
+  // saveTasks();
+  localStorage.setItem('todos', JSON.stringify(toDoObjects));
 }
 
 export function saveTasks(toDo) {

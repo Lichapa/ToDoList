@@ -18,7 +18,18 @@ body {
   padding: 5px 5px;
   margin: 1px 5px;
   background-color: #fff;
-  pointer-events: all;
+}
+
+.icons {
+  margin: auto 0;
+}
+
+.iconBtn,
+.btnToDo {
+  border: 0;
+  width: 30px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .flex-end {
@@ -29,12 +40,6 @@ body {
 h1 {
   font-size: 18px;
   font-weight: 400;
-}
-
-.icons {
-  width: 18px;
-  height: 18px;
-  margin: auto 0;
 }
 
 #addlist {
@@ -68,6 +73,7 @@ ul {
   margin: 2px 5px;
   background-color: aliceblue;
   border: none;
+  cursor: pointer;
 }
 
 .completed {
