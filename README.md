@@ -15,6 +15,10 @@
 - JavaScript
 - webpack
 
+# Live Demo
+> The live Demo of the project is [here](https://618639f341845acb2eca1f8c--jovial-haibt-337d30.netlify.app/)
+
+
 ## Getting Started
 
 > Visit my [repository](https://github.com/Lichapa/ToDoList.git)
