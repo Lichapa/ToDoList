@@ -12,16 +12,23 @@
   <div class="container"> 
     <div class="header flex-end content">
       <h1>Today's To Do</h1>
-      <img class="icons" src="../img/20976.png" alt="Circular arrow" >
+      <i class="fas fa-sync-alt"></i>
     </div>
-
-    <div class="addbox flex-end content">
-      <input type="text" id="addlist" placeholder="add to your list">
-      <img class="icons" src="../img/enter.png" alt="Circular arrow">
+    
+    <div class="addbox content ">
+      <form class="flex-end ">
+      <input type="text" id="addlist" class="addlist" placeholder="add to your list">
+      <button class="btnToDo" type="submit">
+        <span class="enterArrow" id="arrow">&#8629;</span>
+      </button>
+    </form>
     </div>
     <ul class="toDoList" id="toDoList">
     </ul>
-    <button class="btn-clear" type="button">Clear all completed</button>
+    <form>
+      <button class="btn-clear" type="submit">Clear all completed</button>
+    </form>
+    
 
 
   </div>

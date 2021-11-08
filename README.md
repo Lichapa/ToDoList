@@ -17,9 +17,8 @@
 - JavaScript
 - webpack
 
-## Live Demo
-
-[Live Demo Link](https://lichapa.github.io/ToDoList/dist/)
+# Live Demo
+> The live Demo of the project is [here](https://618639f341845acb2eca1f8c--jovial-haibt-337d30.netlify.app/)
 
 
 ## Getting Started
@@ -50,4 +49,4 @@ Give a ⭐️ if you like this project!
 - 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://mit-license.org/) licensed.

@@ -12,16 +12,36 @@ body {
   padding: 3px;
 }
 
-h1 {
+.content {
   font-size: 18px;
   font-weight: 400;
-  padding: 10px 5px;
+  padding: 5px 5px;
   margin: 1px 5px;
   background-color: #fff;
 }
 
-.addbox {
-  width: 96%;
+.icons {
+  width: 18px;
+  height: 18px;
+  margin: auto 0;
+}
+
+.iconBtn,
+.btnToDo {
+  border: 0;
+  width: 30px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 400;
 }
 
 #addlist {
@@ -55,23 +75,21 @@ ul {
   margin: 2px 5px;
   background-color: aliceblue;
   border: none;
+  cursor: pointer;
 }
 
-.content {
-  font-size: 18px;
-  font-weight: 400;
-  padding: 5px 5px;
-  margin: 1px 5px;
-  background-color: #fff;
+.completed {
+  text-decoration: line-through;
 }
 
-.flex-end {
-  display: flex;
-  justify-content: space-between;
+.not-completed {
+  text-decoration: none;
 }
 
-.icons {
-  width: 18px;
-  height: 18px;
-  margin: auto 0;
+.check-box {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
