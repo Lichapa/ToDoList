@@ -3,6 +3,7 @@ import './style.css';
 import { getTaskLS } from './interactive.js';
 import addtodoItem, { manipulate, clearCompleted } from './addRemove.js';
 
+
 const toDoList = document.querySelector('.toDoList');
 const toDoBtn = document.querySelector('.btnToDo');
 const clearBtn = document.querySelector('.btn-clear');

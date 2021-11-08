@@ -91,3 +91,22 @@ ul {
 p {
   margin: 0;
 }
+
+.content {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 5px 5px;
+  margin: 1px 5px;
+  background-color: #fff;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  width: 18px;
+  height: 18px;
+  margin: auto 0;
+}
