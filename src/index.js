@@ -19,7 +19,7 @@ function loadTodo() {
       toDoListItems += `<li class='task flex-end' id='${toDo.index}'>
     <div class='content completed flex-end' > 
     <input type='checkbox' class='check-box' checked><p><span class='hide'>${toDo.task}</span></div>
-    <div class='icons'>
+    <div class='icons '>
     <button class='editBtn iconBtn '>
     <i class="editBtn fas fa-pen btn  "></i>
     </button>

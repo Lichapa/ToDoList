@@ -18,7 +18,10 @@
 - webpack
 
 # Live Demo
-> The live Demo of the project is [here](https://618639f341845acb2eca1f8c--jovial-haibt-337d30.netlify.app/)
+> The live Demo of the project is:
+- [On Netlify](https://618639f341845acb2eca1f8c--jovial-haibt-337d30.netlify.app/)
+
+- [On GitHub Pages](https://lichapa.github.io/ToDoList/dist/)
 
 
 ## Getting Started
